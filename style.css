@@ -34,3 +34,24 @@ p {
     color: #999;
     margin-top: 0;
 }
+
+.year {
+    color:#37b2ff;
+}
+
+a {
+    text-decoration:none;
+    color:#3b3b3b;
+}
+
+.d4 {
+    margin:1em 0 1em 1em;
+}
+
+.d4 h4,
+.d4 p {
+    margin:0;
+    size:inherit;
+    display:inline;
+    font-weight:normal;
+}
