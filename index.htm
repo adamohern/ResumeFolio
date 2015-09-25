@@ -5,8 +5,6 @@
 </head>
 
 <body>
-    <div id="a">
-    </div>
 </body>
 <foot>
     <script language="javascript" type="text/javascript">
@@ -159,31 +157,35 @@
             ]
         };
 
+        function pushdent() {
+            hlevel++;
+            indent += "\t";
+            output += indent + "<div>\n";
+        }
+
+        function popdent() {
+            hlevel--;
+            indent = indent.replace(new RegExp('\\t$'), '');
+            output += indent + "</div>\n";
+        }
 
         function renderHTML(obj) {
-            for (var key in obj) {
-                if (typeof (obj[key]) == 'object') {
-                    if (Array.isArray(obj[key])){
-                        hlevel++;
-                        indent += "\t";
-                        output += indent + "<div>\n";
-                        renderHTML(obj[key]);
-                        hlevel--;
-                        indent = indent.replace(new RegExp('\\t$'), '');
-                        output += indent + "</div>\n";
-                    } else {
-                        renderHTML(obj[key]);
+            if ((typeof (obj) == 'object') && !(obj instanceof Array)) {
+                output += "<H" + hlevel + ">" + obj.heading + "</H" + hlevel + ">\n";
+                if (typeof (obj.content) == 'string') {
+                    output += "<p class=\"content\">" + obj.content + "</p>";
+                } else if (Array.isArray(obj.content)) {
+                    pushdent();
+                    for (i in obj.content) {
+                        renderHTML(obj.content[i]);
                     }
-                } else {
-                    if (key == 'heading'){
-                        output += "<H" + hlevel + ">" + obj[key] + "</H" + hlevel + ">\n";
-                    }
-                    else if (key == 'subheading'){
-                        output += "<p>" + obj[key] + "</p>\n";
-                    }
-                    else if (key == 'content'){
-                        output += "<p>" + obj[key] + "</p>\n";
-                    }
+                    popdent();
+                }
+            } else if (obj instanceof Array) {
+                for (i in obj) {
+                    pushdent();
+                    renderHTML(obj[i]);
+                    popdent();
                 }
             }
         }
@@ -191,10 +193,10 @@
         var indent = '',
             output = '',
             hlevel = '1';
-        
+
         renderHTML(content);
 
-        document.getElementById("a").innerHTML = output;
+        document.body.innerHTML = output;
     </script>
 </foot>
 
