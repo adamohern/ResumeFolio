@@ -1,8 +1,11 @@
 <html>
 
 <head>
+    <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="showdown.min.js"></script>
+    <script src="Please.js"></script>
     <script>
         var CLASSES_YEAR = "year",
             CLASSES_SUBHEADING = "subheading"
@@ -13,7 +16,15 @@
             CONTENT,
             DATE = new Date(),
             MARKDOWN = new showdown.Converter();
+    </script>
+</head>
 
+<body>
+    One sec...
+</body>
+
+<foot>
+    <script>
         function tag(tag, content, classes, id) {
             if (Array.isArray(classes)) classes = " class=\"" + classes.join() + "\"";
             else if (classes) classes = " class=\"" + classes + "\"";
@@ -78,6 +89,20 @@
                 }
 
             }
+        }
+
+        function randomizeColors() {
+            colors = Please.make_scheme({
+                h: 140,
+                s: .05,
+                v: 1,
+                scheme_type: 'analogous', //set scheme type
+                format: 'rgb-string', //give it to us in rgb
+                colors_returned: $("a").size()
+            });
+            $("a").each(function (i) {
+                $(this).css("background-color", colors[Math.floor(Math.random() * colors.length)]);
+            });
         }
 
         var CONTENT = {
@@ -305,16 +330,10 @@
                     }
                 ]
         };
-    </script>
-</head>
 
-<body>
-</body>
-
-<foot>
-    <script>
         renderHTML(CONTENT);
         document.body.innerHTML = OUTPUT;
+        randomizeColors();
     </script>
 </foot>
 
