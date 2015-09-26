@@ -82,6 +82,7 @@ ul {
 }
 
 span.nowrap { display:inline-block; }
+span.small {font-size:.7em;}
 
 @media print {
     body {

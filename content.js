@@ -17,11 +17,11 @@ var CONTENT = {
                     "heading": "Mechanical Color",
                     "subheading": "Design Consulting",
                     "year": ["2008", "present"],
-                    "content": 'Helped design [power tools](#), [audio gear](#), [educational toys](#), a [robot](#), a [hibachi grill](#), a [cooler](#), [headphones](#), [faucets](#), [toilets](#), [flush valves](#), a [sci-fi movie vehicle](#), [coffee makers](#), a [panini maker](#), and a [lint roller](#). Created marketing product photography for [video game consoles](#), [drones](#), [golf clubs](#), [medical devices](#), and a [scrubber thingy](#).'
+                    "content": 'Design consulting for [power tools](#), [audio gear](#), [educational toys](#), a [robot](#), a [hibachi grill](#), a [cooler](#), [headphones](#), [faucets](#), [toilets](#), [flush valves](#), a [sci-fi movie vehicle](#), [coffee makers](#), a [panini maker](#), and a [lint roller](#). Created marketing product photography for [video game consoles](#), [drones](#), [golf clubs](#), [medical devices](#), and a [scrubber thingy](#).'
                     },
                 {
                     "heading": "Bose",
-                    "subheading": "Advanced Development",
+                    "subheading": "Advanced Development <span class=\"nowrap\">Industrial Design</span>",
                     "year": ["2007", "2008"],
                     "content": "Developed user stories and prototypes for radical new product ideas, and served as an internal consulting group supporting design efforts in home entertainment, noise reduction technology, automotive, and professional audio products. Emphasis on technology, performance, and ease of use."
                     },
@@ -40,7 +40,7 @@ var CONTENT = {
                 ]
             },
         {
-            "heading": "I teach other people to design things.",
+            "heading": "I teach other people <span class=\"nowrap\">to design things.</span>",
             "content": [
                 {
                     "heading": "The Foundry",
@@ -228,7 +228,7 @@ var CONTENT = {
             "content": "**Adam O'Hern**\n\n* LinkedIn: [adamohern](#)  \n* Twitter: [adam_ohern](#)  \n* Hangouts: [adam.ohern@gmail.com](#)  \n* Skype: [adamohern](#)  \n* email: [adam@mechanicalcolor.com](#)  \n* M: (310) 692-4380"
             },
         {
-            "content": "*Accessed " + DATE.toDateString() + "*"
+            "content": "<span class=\"small\">Accessed " + DATE.toDateString() + "</span>"
             }
         ]
 };
