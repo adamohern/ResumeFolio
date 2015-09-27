@@ -4,20 +4,26 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="content.js"></script>
     <script src="showdown.min.js"></script>
-    <script src="Please.js"></script>
+    <script src="mustache.js"></script>
     <script>
-        var CLASSES_YEAR = "year",
-            CLASSES_SUBHEADING = "subheading"
+        var HEADING_TEMPLATE =
 
-        var INDENT = '',
-            OUTPUT = '',
-            H_DEPTH = '1',
-            MARKDOWN = new showdown.Converter();
+            '{{ #heading }}\
+<{{ h }}>{{{ heading }}}{{ #subheading }} <span class="subheading">{{{ subheading }}}</span>{{ /subheading }}</{{ h }}>\
+{{ /heading }}';
+
+        var CONTENT_TEMPLATE =
+
+            '{{ #content }}\
+<div class="{{ d }}">\
+    {{ #year1 }}<span class="year">{{ year1 }}{{ #year2 }}-{{year2}}{{ /year2 }}</span> {{ /year1 }}<span class="summary">{{{ content }}}</span>\
+</div>\
+{{ /content }}';
     </script>
 </head>
 
@@ -27,76 +33,75 @@
 
 <foot>
     <script>
-        function tag(tag, content, classes, id) {
-            if (Array.isArray(classes)) classes = " class=\"" + classes.join() + "\"";
-            else if (classes) classes = " class=\"" + classes + "\"";
-            else classes = "";
-
-            if (id) id = " id=\"" + id + "\"";
-            else id = "";
-
-            return "<" + tag + classes + id + ">" + content + "</" + tag + ">";
-        }
+        var INDENT = '',
+            OUTPUT = '',
+            DEPTH = '1',
+            MARKDOWN = new showdown.Converter();
 
         function e(string) {
             OUTPUT += string + "\n";
         }
 
-        function pushdent() {
-            H_DEPTH++;
+        function indent() {
+            DEPTH++;
             INDENT += "\t";
         }
 
-        function popdent() {
-            H_DEPTH--;
+        function outdent() {
+            DEPTH--;
             INDENT = INDENT.replace(new RegExp('\\t$'), '');
         }
 
-        function renderHTML(obj) {
+        function h(depth) {
+            return "h" + depth;
+        }
 
+        function d(depth) {
+            return "d" + depth;
+        }
+
+        function renderHTML(obj) {
             if ((typeof (obj) == 'object') && !(obj instanceof Array)) {
 
-                if (obj.heading) {
 
-                    if (obj.subheading) subheading = " " + tag("span", obj.subheading, CLASSES_SUBHEADING);
-                    else subheading = "";
+                e(Mustache.render(HEADING_TEMPLATE, {
+                    h: h(DEPTH),
+                    heading: obj.heading,
+                    subheading: obj.subheading,
+                }));
 
-                    e(tag("h" + H_DEPTH, obj.heading + subheading));
 
-                }
-
-                if (Array.isArray(obj.year)) year = tag("span", obj.year[0] + "-" + obj.year[1], "year") + " ";
-                else if (obj.year) year = tag("span", obj.year, CLASSES_YEAR) + " ";
-                else year = "";
-
-                if (typeof (obj.content) == 'string') {
-                    e(MARKDOWN.makeHtml(year + obj.content));
-                } else if (Array.isArray(obj.content)) {
+                if (Array.isArray(obj.content)) {
                     for (i in obj.content) {
-                        pushdent();
-                        if (H_DEPTH == 2) e("<section>");
-                        e("<div class=\"d" + H_DEPTH + "\">");
+                        indent();
                         renderHTML(obj.content[i]);
-                        e("</div>");
-                        if (H_DEPTH == 2) e("</section>");
-                        popdent();
+                        outdent();
                     }
+                } else {
+                    if (obj.year) {
+                        if (Array.isArray(obj.year)) {
+                            year1 = obj.year[0];
+                            year2 = obj.year[1];
+                        } else {
+                            year1 = obj.year;
+                            year2 = null;
+                        }
+                    }
+
+                    e(Mustache.render(CONTENT_TEMPLATE, {
+                        content: MARKDOWN.makeHtml(obj.content),
+                        year1: year1,
+                        year2: year2,
+                        d: d(DEPTH)
+                    }));
                 }
 
             }
         }
 
         function randomizeColors() {
-            colors = Please.make_scheme({
-                h: 140,
-                s: .05,
-                v: 1,
-                scheme_type: 'analogous', //set scheme type
-                format: 'rgb-string', //give it to us in rgb
-                colors_returned: $("a").size()
-            });
-            $("a").each(function (i) {
-                $(this).css("background-color", colors[Math.floor(Math.random() * colors.length)]);
+            $("a").each(function () {
+                $(this).addClass("color_" + Math.floor(Math.random() * 4));
             });
         }
 

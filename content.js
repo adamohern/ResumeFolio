@@ -8,7 +8,7 @@ function timeSince(date) {
 }
 
 var CONTENT = {
-    "heading": "Hello. <span class=\"nowrap\">I'm Adam.</span>",
+    "heading": "Hello. I'm Adam.",
     "content": [
         {
             "heading": "I design things.",
@@ -21,7 +21,7 @@ var CONTENT = {
                     },
                 {
                     "heading": "Bose",
-                    "subheading": "Advanced Development <span class=\"nowrap\">Industrial Design</span>",
+                    "subheading": "Advanced Development Industrial Design",
                     "year": ["2007", "2008"],
                     "content": "Developed user stories and prototypes for radical new product ideas, and served as an internal consulting group supporting design efforts in home entertainment, noise reduction technology, automotive, and professional audio products. Emphasis on technology, performance, and ease of use."
                     },
@@ -40,7 +40,7 @@ var CONTENT = {
                 ]
             },
         {
-            "heading": "I teach other people <span class=\"nowrap\">to design things.</span>",
+            "heading": "I teach other people to design things.",
             "content": [
                 {
                     "heading": "The Foundry",
@@ -228,7 +228,7 @@ var CONTENT = {
             "content": "**Adam O'Hern**\n\n* LinkedIn: [adamohern](#)  \n* Twitter: [adam_ohern](#)  \n* Hangouts: [adam.ohern@gmail.com](#)  \n* Skype: [adamohern](#)  \n* email: [adam@mechanicalcolor.com](#)  \n* M: (310) 692-4380"
             },
         {
-            "content": "<span class=\"small\">Accessed " + DATE.toDateString() + "</span>"
+            "content": "Accessed " + DATE.toDateString()
             }
         ]
 };
