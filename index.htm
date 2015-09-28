@@ -90,10 +90,10 @@
             });
         }
         
-        $.get("templates/content.html", function (data) {
-            $('body').html(data);
+        var content = $.get("templates/content.html");
+        $.when(content).done(function() {
+            $("body").html(content.html())
         });
-
         randomizeColors();
             
     </script>
