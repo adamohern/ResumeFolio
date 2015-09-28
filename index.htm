@@ -1,13 +1,12 @@
 <html>
+
 <head>
     <script>
-
         var WRAPPER =
 
-'<div class="{{ d }}">\
+            '<div class="{{ d }}">\
 {{{ content }}}\
 </div>';
-
     </script>
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
@@ -26,21 +25,10 @@
     <script src="js/showdown.min.js"></script>
     <script src="js/mustache.js"></script>
     <script>
-        
-        var templates = (function() {
-            var content = null;
-            $.ajax({
-                'async': false,
-                'global': false,
-                'url': "templates/content.mst",
-                'dataType': "html",
-                'success': function (data) {
-                    content = data;
-                }
-            });
-            return content;
-        })();
-        
+        var templates = $.get("templates/content.mst", function (data) {
+            var content = data;
+        });
+
         var INDENT = '',
             DEPTH = 1,
             MARKDOWN = new showdown.Converter();
