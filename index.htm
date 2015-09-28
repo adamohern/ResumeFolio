@@ -23,7 +23,7 @@
             DEPTH = 1,
             MARKDOWN = new showdown.Converter();
 
-        function renderHTML(obj,templates) {
+        function renderHTML(json,templates) {
             HTML = '';
 
             if ((typeof (obj) == 'object') && !(obj instanceof Array)) {
@@ -86,9 +86,12 @@
         var wrapper = $.get("templates/wrapper.html");
         $.when(content,wrapper).done(function(content,wrapper) {
             var templates = {
-                content: content[0],
-                wrapper: wrapper[0]
+                content: content,
+                wrapper: wrapper
             }
+            console.log(templates);
+            console.log(content);
+            console.log(wrapper);
             $("body").html(renderHTML(CONTENT,templates))
         });
         randomizeColors();
