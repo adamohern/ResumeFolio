@@ -91,7 +91,7 @@
         }
         
         $.get("templates/content.html", function (data) {
-            $('body').html("test B");
+            $('body').html(renderHTML(data));
         });
 
         randomizeColors();
