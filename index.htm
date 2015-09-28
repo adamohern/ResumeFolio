@@ -26,7 +26,7 @@
         function renderHTML(json,templates) {
             HTML = '';
 
-            if ((typeof (json) == 'jsonect') && !(json instanceof Array)) {
+            if ((typeof (json) == 'object') && !(json instanceof Array)) {
 
                 if (Array.isArray(json.content)) {
                     content = null;
@@ -89,7 +89,6 @@
                 content: content[0],
                 wrapper: wrapper[0]
             };
-            console.log(CONTENT);
             $("body").html(renderHTML(CONTENT,templates));
         });
         randomizeColors();
