@@ -25,9 +25,7 @@
     <script src="js/showdown.min.js"></script>
     <script src="js/mustache.js"></script>
     <script>
-        var templates = $.get("templates/content.mst", function (data) {
-            var content = data;
-        });
+        
 
         var INDENT = '',
             DEPTH = 1,
@@ -91,8 +89,11 @@
                 $(this).addClass("color_" + Math.floor(Math.random() * 4));
             });
         }
-
-        document.body.innerHTML = renderHTML(CONTENT);;
+        
+        var templates = $.get("templates/content.mst", function (data) {
+            $('body').html(renderHTML(data));
+        });
+        
         randomizeColors();
     </script>
 </foot>
