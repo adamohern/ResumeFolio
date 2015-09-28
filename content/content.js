@@ -34,9 +34,9 @@ var CONTENT = {
                     },
                 {
                     heading: "HP",
-                    subheading: "Laptops",
+                    subheading: "Laptop Design Group",
                     year: "2004",
-                    content: "Designed a [thin client ecosystem](#) for the home."
+                    content: "Three month internship. Designed a [thin client ecosystem](#) for the home."
                     }
                 ]
             },
