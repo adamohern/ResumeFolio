@@ -1,14 +1,6 @@
 <html>
 
 <head>
-    <script>
-        var WRAPPER =
-
-            '<div class="{{ d }}">\
-{{{ content }}}\
-</div>';
-    </script>
-
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -31,7 +23,7 @@
             DEPTH = 1,
             MARKDOWN = new showdown.Converter();
 
-        function renderHTML(obj) {
+        function renderHTML(obj,templates) {
             HTML = '';
 
             if ((typeof (obj) == 'object') && !(obj instanceof Array)) {
@@ -69,7 +61,7 @@
                         DEPTH++;
                         INDENT += "\t";
 
-                        HTML += Mustache.render(WRAPPER, {
+                        HTML += Mustache.render(templates.wrapper, {
                             d: "d" + DEPTH,
                             content: renderHTML(obj.content[i])
                         });
@@ -91,8 +83,13 @@
         }
         
         var content = $.get("templates/content.html");
-        $.when(content).done(function(content) {
-            $("body").html(content)
+        var wrapper = $.get("templates/wrapper.html");
+        $.when(content,wrapper).done(function(content,wrapper) {
+            var templates = {
+                content: content,
+                wrapper: wrapper
+            }
+            $("body").html(renderHTML(CONTENT,templates))
         });
         randomizeColors();
             
