@@ -2,32 +2,32 @@
 
 <head>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="reset.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="content.js"></script>
-    <script src="showdown.min.js"></script>
-    <script src="mustache.js"></script>
+    <script src="content/content.js"></script>
+    <script src="js/showdown.min.js"></script>
+    <script src="js/mustache.js"></script>
     <script>
         var TEMPLATE =
 
-'{{ #heading }}\
-<{{ h }}>{{{ heading }}}{{ #subheading }} <span class="subheading">{{{ subheading }}}</span>{{ /subheading }}</{{ h }}>\
-{{ /heading }}\
+            '{{ #heading }}<div class="{{ h }}-heading heading {{ #thumb }}has-thumb{{ /thumb }}">\
+{{ #thumb }}<div class="{{ h }}-thumb thumb" style="background-image:url(\'{{{ thumb }}}\');"></div>{{ /thumb }}\
+<{{ h }}>{{{ heading }}}{{ #year1 }} <span class="year">{{ year1 }}{{ #year2 }}-{{year2}}{{ /year2 }}</span>{{ /year1 }}</{{ h }}>\
+</div>{{ /heading }}\
 {{ #content }}\
 <div class="content">\
-    {{ #year1 }}<span class="year">{{ year1 }}{{ #year2 }}-{{year2}}{{ /year2 }}</span> {{ /year1 }}<span class="summary">{{{ content }}}</span>\
+    {{ #subheading }}<span class="subheading">{{{ subheading }}}</span> - {{ /subheading }}<span class="summary">{{{ content }}}</span>\
 </div>\
 {{ /content }}';
-        
-        var WRAPPER = 
 
-'<div class="{{ d }}">\
+        var WRAPPER =
+
+            '<div class="{{ d }}">\
     {{{ content }}}\
 </div>';
-        
     </script>
 </head>
 
@@ -38,42 +38,21 @@
 <foot>
     <script>
         var INDENT = '',
-            OUTPUT = '',
-            DEPTH = '1',
+            DEPTH = 1,
             MARKDOWN = new showdown.Converter();
 
-        function e(string) {
-            OUTPUT += string + "\n";
-        }
-
-        function indent() {
-            DEPTH++;
-            INDENT += "\t";
-        }
-
-        function outdent() {
-            DEPTH--;
-            INDENT = INDENT.replace(new RegExp('\\t$'), '');
-        }
-
-        function h(depth) {
-            return "h" + depth;
-        }
-
-        function d(depth) {
-            return "d" + depth;
-        }
-
         function renderHTML(obj) {
+            HTML = '';
+            
             if ((typeof (obj) == 'object') && !(obj instanceof Array)) {
 
-                if (Array.isArray(obj.content)) { 
+                if (Array.isArray(obj.content)) {
                     content = null;
                 } else if (typeof obj.content == "string") {
                     content = obj.content;
                 }
-                
-                
+
+
                 if (Array.isArray(obj.year)) {
                     year1 = obj.year[0];
                     year2 = obj.year[1];
@@ -83,29 +62,34 @@
                 } else {
                     var year1, year2 = null;
                 }
-                
-                e(Mustache.render(WRAPPER, {
-                    
-                    d: d(DEPTH),
-                    content: Mustache.render(TEMPLATE, {
-                        h: h(DEPTH),
-                        heading: obj.heading,
-                        subheading: obj.subheading,
-                        content: MARKDOWN.makeHtml(content),
-                        year1: year1,
-                        year2: year2,
-                        d: d(DEPTH)
-                    })
-                  
-                }));
+
+                HTML += Mustache.render(TEMPLATE, {
+                    h: "h" + DEPTH,
+                    heading: obj.heading,
+                    thumb: obj.thumb,
+                    subheading: obj.subheading,
+                    content: MARKDOWN.makeHtml(content),
+                    year1: year1,
+                    year2: year2,
+                    d: "d" + DEPTH
+                });
 
                 if (Array.isArray(obj.content)) {
                     for (i in obj.content) {
-                        indent();
-                        renderHTML(obj.content[i]);
-                        outdent();
+                        DEPTH++;
+                        INDENT += "\t";
+
+                        HTML += Mustache.render(WRAPPER, {
+                            d: "d" + DEPTH,
+                            content: renderHTML(obj.content[i])
+                        });
+
+                        DEPTH--;
+                        INDENT = INDENT.replace(new RegExp('\\t$'), '');
                     }
-                } 
+                }
+                
+                return HTML;
 
             }
         }
@@ -116,8 +100,7 @@
             });
         }
 
-        renderHTML(CONTENT);
-        document.body.innerHTML = OUTPUT;
+        document.body.innerHTML = renderHTML(CONTENT);;
         randomizeColors();
     </script>
 </foot>
