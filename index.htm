@@ -90,19 +90,12 @@
             });
         }
         
-        $(document).on('pageinit', function() {
-            
-            
-            
-            $.get("templates/content.html", function (data) {
-                $('body').html("test B");
-            });
-
-            randomizeColors();
-            
+        $.get("templates/content.html", function (data) {
+            $('body').html("test B");
         });
-        
-        $('body').html("test A");
+
+        randomizeColors();
+            
     </script>
 </foot>
 
