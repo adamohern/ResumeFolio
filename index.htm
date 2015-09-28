@@ -1,31 +1,9 @@
 <html>
 
 <head>
-    <script>
-        var TEMPLATE =
-
-'{{ #heading }}<div class="{{ h }}-heading heading {{ #thumb }}has-thumb{{ /thumb }}">\
-{{ #thumb }}<div class="{{ h }}-thumb thumb" style="background-image:url(\'{{{ thumb }}}\');"></div>{{ /thumb }}\
-<{{ h }}>{{{ heading }}}{{ #year1 }} <span class="year">{{ year1 }}{{ #year2 }}-{{year2}}{{ /year2 }}</span>{{ /year1 }}</{{ h }}>\
-</div>{{ /heading }}\
-{{ #content }}\
-<div class="content">\
-{{ #subheading }}<span class="subheading">{{{ subheading }}}</span> - {{ /subheading }}<span class="summary">{{{ content }}}</span>\
-</div>\
-{{ /content }}';
-
-        var WRAPPER =
-
-'<div class="{{ d }}">\
-{{{ content }}}\
-</div>';
-
-    </script>
-
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/featherlight.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 </head>
 
@@ -39,51 +17,53 @@
     <script src="js/showdown.min.js"></script>
     <script src="js/mustache.js"></script>
     <script>
+        
+
         var INDENT = '',
             DEPTH = 1,
             MARKDOWN = new showdown.Converter();
 
-        function renderHTML(obj) {
+        function renderHTML(json,templates) {
             HTML = '';
 
-            if ((typeof (obj) == 'object') && !(obj instanceof Array)) {
+            if ((typeof (json) == 'object') && !(json instanceof Array)) {
 
-                if (Array.isArray(obj.content)) {
+                if (Array.isArray(json.content)) {
                     content = null;
-                } else if (typeof obj.content == "string") {
-                    content = obj.content;
+                } else if (typeof json.content == "string") {
+                    content = json.content;
                 }
 
 
-                if (Array.isArray(obj.year)) {
-                    year1 = obj.year[0];
-                    year2 = obj.year[1];
-                } else if (obj.year) {
-                    year1 = obj.year;
+                if (Array.isArray(json.year)) {
+                    year1 = json.year[0];
+                    year2 = json.year[1];
+                } else if (json.year) {
+                    year1 = json.year;
                     year2 = null;
                 } else {
                     var year1, year2 = null;
                 }
 
-                HTML += Mustache.render(TEMPLATE, {
+                HTML += Mustache.render(templates.content, {
                     h: "h" + DEPTH,
-                    heading: obj.heading,
-                    thumb: obj.thumb,
-                    subheading: obj.subheading,
+                    heading: json.heading,
+                    thumb: json.thumb,
+                    subheading: json.subheading,
                     content: MARKDOWN.makeHtml(content),
                     year1: year1,
                     year2: year2,
                     d: "d" + DEPTH
                 });
 
-                if (Array.isArray(obj.content)) {
-                    for (i in obj.content) {
+                if (Array.isArray(json.content)) {
+                    for (i in json.content) {
                         DEPTH++;
                         INDENT += "\t";
 
-                        HTML += Mustache.render(WRAPPER, {
+                        HTML += Mustache.render(templates.wrapper, {
                             d: "d" + DEPTH,
-                            content: renderHTML(obj.content[i])
+                            content: renderHTML(json.content[i],templates)
                         });
 
                         DEPTH--;
@@ -96,14 +76,22 @@
             }
         }
 
-        function randomizeColors() {
+        var content = $.get("templates/content.html");
+        var wrapper = $.get("templates/wrapper.html");
+        
+        $.when(content,wrapper).done(function(content,wrapper) {
+            var templates = {
+                content: content[0],
+                wrapper: wrapper[0]
+            };
+            
+            $("body").html(renderHTML(CONTENT,templates));
+            
             $("a").each(function () {
                 $(this).addClass("color_" + Math.floor(Math.random() * 4));
             });
-        }
-
-        document.body.innerHTML = renderHTML(CONTENT);;
-        randomizeColors();
+        });
+            
     </script>
 </foot>
 
