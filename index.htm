@@ -86,12 +86,10 @@
         var wrapper = $.get("templates/wrapper.html");
         $.when(content,wrapper).done(function(content,wrapper) {
             var templates = {
-                content: content,
-                wrapper: wrapper
+                content: content[0],
+                wrapper: wrapper[0]
             }
             console.log(templates);
-            console.log(content);
-            console.log(wrapper);
             $("body").html(renderHTML(CONTENT,templates))
         });
         randomizeColors();
