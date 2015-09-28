@@ -36,10 +36,6 @@ h1 {
     margin-top: .5em;
 }
 
-.thumb {
-    border-radius: 100%;
-}
-
 h2 {
     font-size: 2em;
     line-height: 1.2em;
@@ -61,14 +57,9 @@ ol {
     line-height: 1.7em;
 }
 
-.year {
-    font-weight: 400;
-    color: #37b2ff;
-    display: inline-block;
-}
-
-.subheading {
-    font-weight: 400;
+ul {
+    list-style-type: none;
+    padding-left: 0;
 }
 
 a {
@@ -121,6 +112,22 @@ a.color_4 {
     background-color: #eefff6;
 }
 
+
+.thumb {
+    border-radius: 100%;
+}
+
+.year {
+    font-weight: 400;
+    color: #37b2ff;
+    display: inline-block;
+}
+
+.subheading {
+    font-weight: 400;
+}
+
+
 .summary,
 .summary p {
     display: inline;
@@ -150,16 +157,11 @@ a.color_4 {
     font-weight: 400;
 }
 
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
 .nowrap {
     display: inline-block;
 }
 
-span.small {
+.small {
     font-size: .7em;
 }
 

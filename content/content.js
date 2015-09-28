@@ -229,7 +229,7 @@ var CONTENT = {
             content: "**Adam O'Hern**\n\n* LinkedIn: [adamohern](#)  \n* Twitter: [adam_ohern](#)  \n* Hangouts: [adam.ohern@gmail.com](#)  \n* Skype: [adamohern](#)  \n* email: [adam@mechanicalcolor.com](#)  \n* M: (310) 692-4380"
             },
         {
-            content: "Accessed " + DATE.toDateString()
+            content: "<span class=\"small\">Accessed " + DATE.toDateString() + "</small>"
             }
         ]
 };
