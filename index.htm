@@ -90,11 +90,14 @@
             });
         }
         
-        var templates = $.get("templates/content.mst", function (data) {
-            $('body').html(renderHTML(data));
-        });
-        
-        randomizeColors();
+        $(document).on('pageinit', function() {
+            
+            $.get("templates/content.html", function (data) {
+                $('body').html(renderHTML(data));
+            });
+
+            randomizeColors();
+        }
     </script>
 </foot>
 
