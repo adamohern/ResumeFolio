@@ -1,0 +1,9 @@
+{{ #heading }}<div class="{{ h }}-heading heading {{ #thumb }}has-thumb{{ /thumb }}">
+{{ #thumb }}<div class="{{ h }}-thumb thumb" style="background-image:url(\'{{{ thumb }}}\');"></div>{{ /thumb }}
+<{{ h }}>{{{ heading }}}{{ #year1 }} <span class="year">{{ year1 }}{{ #year2 }}-{{year2}}{{ /year2 }}</span>{{ /year1 }}</{{ h }}>
+</div>{{ /heading }}
+{{ #content }}
+<div class="content">
+{{ #subheading }}<span class="subheading">{{{ subheading }}}</span> - {{ /subheading }}<span class="summary">{{{ content }}}</span>
+</div>
+{{ /content }}
