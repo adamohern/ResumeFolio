@@ -92,8 +92,10 @@
         
         $(document).on('pageinit', function() {
             
+            $('body').html("test A");
+            
             $.get("templates/content.html", function (data) {
-                $('body').html("test");
+                $('body').html("test B");
             });
 
             randomizeColors();
