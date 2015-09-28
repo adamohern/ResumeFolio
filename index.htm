@@ -28,6 +28,8 @@
 
             if ((typeof (json) == 'object') && !(json instanceof Array)) {
 
+                console.log(templates);
+                
                 if (Array.isArray(json.content)) {
                     content = null;
                 } else if (typeof json.content == "string") {
