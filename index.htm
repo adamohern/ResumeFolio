@@ -27,18 +27,18 @@
     <script src="js/mustache.js"></script>
     <script>
         
-        var TEMPLATE = (function() {
-            var text = null;
+        var templates = (function() {
+            var content = null;
             $.ajax({
                 'async': false,
                 'global': false,
                 'url': "templates/content.mst",
                 'dataType': "json",
                 'success': function (data) {
-                    text = data;
+                    content = data;
                 }
             });
-            return text;
+            return content;
         })();
         
         var INDENT = '',
@@ -67,7 +67,7 @@
                     var year1, year2 = null;
                 }
 
-                HTML += Mustache.render(TEMPLATE, {
+                HTML += Mustache.render(templates.content, {
                     h: "h" + DEPTH,
                     heading: obj.heading,
                     thumb: obj.thumb,
