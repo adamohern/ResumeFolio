@@ -1,29 +1,31 @@
 <html>
 
 <head>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <script>
         var TEMPLATE =
 
-            '{{ #heading }}<div class="{{ h }}-heading heading {{ #thumb }}has-thumb{{ /thumb }}">\
+'{{ #heading }}<div class="{{ h }}-heading heading {{ #thumb }}has-thumb{{ /thumb }}">\
 {{ #thumb }}<div class="{{ h }}-thumb thumb" style="background-image:url(\'{{{ thumb }}}\');"></div>{{ /thumb }}\
 <{{ h }}>{{{ heading }}}{{ #year1 }} <span class="year">{{ year1 }}{{ #year2 }}-{{year2}}{{ /year2 }}</span>{{ /year1 }}</{{ h }}>\
 </div>{{ /heading }}\
 {{ #content }}\
 <div class="content">\
-    {{ #subheading }}<span class="subheading">{{{ subheading }}}</span> - {{ /subheading }}<span class="summary">{{{ content }}}</span>\
+{{ #subheading }}<span class="subheading">{{{ subheading }}}</span> - {{ /subheading }}<span class="summary">{{{ content }}}</span>\
 </div>\
 {{ /content }}';
 
         var WRAPPER =
 
-            '<div class="{{ d }}">\
-    {{{ content }}}\
+'<div class="{{ d }}">\
+{{{ content }}}\
 </div>';
+
     </script>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 </head>
 
 <body>
@@ -42,7 +44,7 @@
 
         function renderHTML(obj) {
             HTML = '';
-            
+
             if ((typeof (obj) == 'object') && !(obj instanceof Array)) {
 
                 if (Array.isArray(obj.content)) {
@@ -87,7 +89,7 @@
                         INDENT = INDENT.replace(new RegExp('\\t$'), '');
                     }
                 }
-                
+
                 return HTML;
 
             }
