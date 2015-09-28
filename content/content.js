@@ -45,7 +45,7 @@ var CONTENT = {
             content: [
                 {
                     heading: "The Foundry",
-                    subheading: "Trainer",
+                    subheading: "Contract Trainer",
                     year: ["2010", "2015"],
                     content: "Developed video training and travelled to design offices around the US training teams to use MODO for 3D modeling and visualization, mainly in the automotive and sporting goods design fields."
                     },
@@ -57,7 +57,7 @@ var CONTENT = {
                     },
                 {
                     heading: "Studio Arts",
-                    subheading: "Instructor",
+                    subheading: "Contract Instructor",
                     year: ["2010", "2012"],
                     content: "Classroom instructor for beginner and intermediate level MODO and Rhino courses for Hollywood VFX professionals."
                     },
@@ -108,7 +108,7 @@ var CONTENT = {
                     content: "At SolidSmack we [write](#), [podcast](#), and [produce video content](#) about the design process. We're interested in how real people make real products in real life."
                     }, {
                     heading: "Freelance",
-                    subheading: "Writing for Hire",
+                    subheading: "Pen for Hire",
                     content: [
                         {
                             heading: "3DWorld Magazine",
