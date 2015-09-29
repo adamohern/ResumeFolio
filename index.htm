@@ -18,10 +18,9 @@
     <script src="content/content.js"></script>
     <script src="js/showdown.min.js"></script>
     <script src="js/mustache.js"></script>
-    <script src="js/replaceWithSpan.js"></script>
     <script src="js/shorthand.js"></script>
     <script>
-        var markdown = new showdown.Converter({ extensions: [showdown.extensions.replaceWithSpan] });
+        var markdown = new showdown.Converter();
 
         function renderHTML(json, templates, depth) {
 
