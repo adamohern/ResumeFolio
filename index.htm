@@ -19,7 +19,7 @@
     <script src="js/showdown.min.js"></script>
     <script src="js/mustache.js"></script>
     <script>
-        var MARKDOWN = new showdown.Converter();
+        var markdown = new showdown.Converter();
 
         function renderHTML(json, templates, depth) {
 
@@ -28,7 +28,7 @@
                 heading: json.heading,
                 thumb: json.thumb,
                 subheading: json.subheading,
-                content: MARKDOWN.makeHtml(Array.isArray(json.content) ? null : json.content),
+                content: markdown.makeHtml(Array.isArray(json.content) ? null : json.content),
                 year1: json.year ? (typeof (json.year) == 'string' ? json.year : json.year[0]) : null,
                 year2: json.year ? (typeof (json.year) == 'object' ? json.year[1] : null) : null,
                 d: "d" + depth
