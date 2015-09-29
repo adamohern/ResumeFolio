@@ -18,17 +18,19 @@
     <script src="content/content.js"></script>
     <script src="js/showdown.min.js"></script>
     <script src="js/mustache.js"></script>
+    <script src="js/replaceWithSpan.js"></script>
+    <script src="js/shorthand.js"></script>
     <script>
-        var markdown = new showdown.Converter();
+        var markdown = new showdown.Converter({ extensions: [showdown.extensions.replaceWithSpan] });
 
         function renderHTML(json, templates, depth) {
 
             var HTML = Mustache.render(templates.content, {
                 h: "h" + depth,
-                heading: json.heading,
+                heading: shorthand(json.heading),
                 thumb: json.thumb,
                 subheading: json.subheading,
-                content: markdown.makeHtml(Array.isArray(json.content) ? null : json.content),
+                content: markdown.makeHtml(shorthand(Array.isArray(json.content) ? null : json.content)),
                 year1: json.year ? (typeof (json.year) == 'string' ? json.year : json.year[0]) : null,
                 year2: json.year ? (typeof (json.year) == 'object' ? json.year[1] : null) : null,
                 d: "d" + depth

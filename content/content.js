@@ -8,7 +8,7 @@ function timeSince(date) {
 }
 
 var CONTENT = {
-    heading: "Hello. <span class=\"nowrap\">I'm Adam.</span>",
+    heading: "Hello. {I'm Adam.}(nowrap)",
     thumb: "img/adam.jpg",
     content: [
         {
@@ -41,7 +41,7 @@ var CONTENT = {
                 ]
             },
         {
-            heading: "I teach other people to design things.",
+            heading: "I teach other people {to design things.}(nowrap)",
             content: [
                 {
                     heading: "The Foundry",
@@ -76,7 +76,7 @@ var CONTENT = {
                 ]
             },
         {
-            heading: "I design tools that help people design things.",
+            heading: "I design tools {that help people }(nowrap){design things.}(nowrap)",
             content: [
                 {
                     heading: "Mechanical Color",
@@ -99,7 +99,7 @@ var CONTENT = {
                 ]
             },
         {
-            heading: "I write about designing things.",
+            heading: "I publish about {designing things.}(nowrap)",
             content: [
                 {
                     heading: "SolidSmack",
@@ -229,7 +229,7 @@ var CONTENT = {
             content: "**Adam O'Hern**\n\n* LinkedIn: [adamohern](#)  \n* Twitter: [adam_ohern](#)  \n* Hangouts: [adam.ohern@gmail.com](#)  \n* Skype: [adamohern](#)  \n* email: [adam@mechanicalcolor.com](#)  \n* M: (310) 692-4380"
             },
         {
-            content: "<span class=\"small\">Accessed " + DATE.toDateString() + "</small>"
+            content: "{Accessed " + DATE.toDateString() + "</small>}(small)"
             }
         ]
 };
