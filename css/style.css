@@ -175,10 +175,26 @@ a.color_4 {
 
 .imageBlock {
     display:none;
+    text-align:center;
 }
 
 .imageBlock img {
     max-width:100%;
+}
+
+.imageBlock h3 {
+    margin-bottom:.5em;
+}
+
+.imageBlock .caption {
+    text-align:left;
+    max-width:40em;
+    margin: 4% auto;
+    padding: 0 1em;
+}
+
+.imageBlock .caption p {
+    margin-bottom:.7em;
 }
 
 @media print {

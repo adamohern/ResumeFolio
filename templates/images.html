@@ -1,4 +1,4 @@
 <div class="imageBlock" id="{{ anchor }}">
-    <img src="{{ image }}" />
+    {{ #image }}<img src="{{ image }}" />{{ /image }}
     {{ #caption }}<div class="caption">{{{ caption }}}</div>{{ /caption }}
 </div>

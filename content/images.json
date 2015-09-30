@@ -1,7 +1,79 @@
 {
-    "powertools":{
+    "indypowertools":{
+        "image":"",
+        "caption":"###Jigsaw\n\nWorked with Black&Decker on a contract basis to design a jigsaw."
+    },
+    "bdkpowertools":{
         "image":"img/powertools.png",
-        "caption":"Power tools are fun."
+        "caption":"###Black&Decker - Industrial Designer\n\nWorked closely with marketing and engineering teams to manufacture power tools for mass market.\n\nRole included product ideation, 2D sketching in Photoshop and Illustrator, 3D modeling in CATIA and Rhino, building mockups and quick prototypes, participating in qualitative user research sessions, corresponding daily with engineers both domestically and in China, and working with a dedicated CATIA surfacing team to finalize tooling geometry."
+    },
+    "audiogear":{
+        "image":"",
+        "caption":""
+    },
+    "educationaltoys":{
+        "image":"",
+        "caption":""
+    },
+    "robot":{
+        "image":"",
+        "caption":""
+    },
+    "hibachigrill":{
+        "image":"",
+        "caption":""
+    },
+    "cooler":{
+        "image":"",
+        "caption":""
+    },
+    "headphones":{
+        "image":"",
+        "caption":""
+    },
+    "faucets":{
+        "image":"",
+        "caption":""
+    },
+    "toilets":{
+        "image":"",
+        "caption":""
+    },
+    "flushvalves":{
+        "image":"",
+        "caption":""
+    },
+    "scifi":{
+        "image":"",
+        "caption":""
+    },
+    "coffeemakers":{
+        "image":"",
+        "caption":""
+    },
+    "paninimaker":{
+        "image":"",
+        "caption":""
+    },
+    "xboxone":{
+        "image":"",
+        "caption":""
+    },
+    "drones":{
+        "image":"",
+        "caption":""
+    },
+    "golfclubs":{
+        "image":"",
+        "caption":""
+    },
+    "medical":{
+        "image":"",
+        "caption":""
+    },
+    "scrubber":{
+        "image":"",
+        "caption":""
     },
     "vpx":{
         "image":"img/vpx.png",
@@ -10,5 +82,61 @@
     "thinclient":{
         "image":"img/thinclient.png",
         "caption":"Oooooh."
+    },
+    "wheely":{
+        "image":"",
+        "caption":""
+    },
+    "flipper":{
+        "image":"",
+        "caption":""
+    },
+    "snap":{
+        "image":"",
+        "caption":""
+    },
+    "metermade":{
+        "image":"",
+        "caption":""
+    },
+    "bling":{
+        "image":"",
+        "caption":""
+    },
+    "cropper":{
+        "image":"",
+        "caption":""
+    },
+    "rendermonkey":{
+        "image":"",
+        "caption":""
+    },
+    "zen":{
+        "image":"",
+        "caption":""
+    },
+    "sswrite":{
+        "image":"",
+        "caption":""
+    },
+    "sspodcast":{
+        "image":"",
+        "caption":""
+    },
+    "ssvideo":{
+        "image":"",
+        "caption":""
+    },
+    "3dworld":{
+        "image":"",
+        "caption":""
+    },
+    "3dworldvid":{
+        "image":"",
+        "caption":""
+    },
+    "develop3d":{
+        "image":"",
+        "caption":""
     }
 }
