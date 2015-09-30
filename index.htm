@@ -39,7 +39,7 @@
             if (Array.isArray(json.content)) {
                 for (i in json.content) {
                     HTML += Mustache.render(templates.wrapper, {
-                        d: depth,
+                        class: "d" + depth,
                         content: renderHTML(json.content[i], templates, depth + 1)
                     });
                 }
@@ -59,7 +59,10 @@
                 });
             };
 
-            return HTML;
+            return Mustache.render(templates.wrapper, {
+                class: "imageBlocks",
+                content: HTML
+            });
         };
 
         var templates = {};
