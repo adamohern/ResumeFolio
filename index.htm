@@ -27,20 +27,19 @@
 
         function renderHTML(json, templates, depth) {
             var HTML = Mustache.render(templates.content, {
-                h: "h" + depth,
                 heading: shorthand(json.heading),
                 thumb: json.thumb,
                 subheading: json.subheading,
                 content: markdown.makeHtml(shorthand(Array.isArray(json.content) ? null : json.content)),
                 year1: json.year ? (typeof (json.year) == 'string' ? json.year : json.year[0]) : null,
                 year2: json.year ? (typeof (json.year) == 'object' ? json.year[1] : null) : null,
-                d: "d" + depth
+                d: depth
             });
 
             if (Array.isArray(json.content)) {
                 for (i in json.content) {
                     HTML += Mustache.render(templates.wrapper, {
-                        d: "d" + depth,
+                        d: depth,
                         content: renderHTML(json.content[i], templates, depth + 1)
                     });
                 }
@@ -49,24 +48,55 @@
             return HTML;
         };
 
-        var content = $.get("templates/content.html");
-        var wrapper = $.get("templates/wrapper.html");
-        var json = $.getJSON("content/content.json");
-
-        $.when(content, wrapper, json).done(function (content, wrapper, json) {
-            var templates = {
-                content: content[0],
-                wrapper: wrapper[0]
+        function renderImages(json, templates) {
+            for (var i in json) {
+                var HTML = Mustache.render(templates.images, {
+                    anchor: i,
+                    image: json[i].image,
+                    caption: markdown.makeHtml(shorthand(json[i].caption))
+                });
             };
 
-            $("body").html(renderHTML(json[0], templates, 1));
+            return HTML;
+        };
 
-            $("a").each(function () {
-                $(this).addClass("color_" + Math.floor(Math.random() * 4));
-                $(this).fancybox();
+        var templates = {};
+        var content = {};
+
+        $.when(
+            $.get("templates/content.html"),
+            $.get("templates/wrapper.html"),
+            $.get("templates/images.html"),
+            $.getJSON("content/content.json"),
+            $.getJSON("content/images.json")
+        ).done(
+            function (
+                t_content,
+                t_wrapper,
+                t_images,
+                c_content,
+                c_images
+            ) {
+                templates = {
+                    content: t_content[0],
+                    wrapper: t_wrapper[0],
+                    images: t_images[0]
+                };
+
+                content = {
+                    content: c_content[0],
+                    images: c_images[0]
+                }
+
+                $("body").html(
+                    renderHTML(content.content, templates, 1) + renderImages(content.images, templates)
+                );
+
+                $("a").each(function () {
+                    $(this).addClass("color_" + Math.floor(Math.random() * 4));
+                    $(this).fancybox();
+                });
             });
-        });
-            
     </script>
 </foot>
 
