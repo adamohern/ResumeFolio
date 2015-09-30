@@ -2,5 +2,13 @@
     "powertools":{
         "image":"img/powertools.png",
         "caption":"Power tools are fun."
+    },
+    "vpx":{
+        "image":"img/vpx.png",
+        "caption":"Oh yay! More tools."
+    },
+    "thinclient":{
+        "image":"img/thinclient.png",
+        "caption":"Oooooh."
     }
 }

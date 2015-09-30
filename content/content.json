@@ -12,7 +12,7 @@
                         "2008",
                         "present"
                     ],
-                    "content": "Design consulting for [power tools](#powertools), [audio gear](#), [educational toys](#), a [robot](#), a [hibachi grill](#), a [cooler](#), [headphones](#), [faucets](#), [toilets](#), [flush valves](#), a [sci-fi movie vehicle](#), [coffee makers](#), a [panini maker](#), and a [lint roller](#). Created marketing product photography for [video game consoles](#), [drones](#), [golf clubs](#), [medical devices](#), and a [scrubber thingy](#)."
+                    "content": "Design consulting for [power tools](#powertools), [audio gear](#audiogear), [educational toys](#educationaltoys), a [robot](#robot), a [hibachi grill](#hibachigrill), a [cooler](#cooler), [headphones](#headphones), [faucets](#faucets), [toilets](#toilets), [flush valves](#flushvalves), a [sci-fi movie vehicle](#scifi), [coffee makers](#coffeemakers), a [panini maker](#paninimaker), and a [lint roller](#lintroller). Created marketing product photography for [video game consoles](#xboxone), [drones](#drones), [golf clubs](#golfclubs), [medical devices](#medical), and a [scrubber thingy](#scrubber)."
                 },
                 {
                     "heading": "Bose",
@@ -30,13 +30,13 @@
                         "2005",
                         "2007"
                     ],
-                    "content": "Designed [power tools](/img/powertools.png) for mass market, especially the [VPX product line](/img/vpx.png). Special emphasis on design for manufacturability, cost, and visual brand language development."
+                    "content": "Designed [power tools](#powertools) for mass market, especially the [VPX product line](#vpx). Special emphasis on design for manufacturability, cost, and visual brand language development."
                 },
                 {
                     "heading": "HP",
                     "subheading": "Laptop Design Group",
                     "year": "2004",
-                    "content": "Three month internship. Designed a [thin client ecosystem](/img/thinclient.png) for the home."
+                    "content": "Three month internship. Designed a [thin client ecosystem](#thinclient) for the home."
                 }
             ]
         },
@@ -97,7 +97,7 @@
                         "2014",
                         "present"
                     ],
-                    "content": "Developed a line of popular plugins for MODO, including plugins for dynamic [radial](#) and [multi-axis symmetry](#), [iterative saving](#) and revision management, live-updating [dimensions](#), simplified [matcap shaders](#), [image cropping](#), simplified [progressive rendering](#), and completely reworked [User Interface](#)."
+                    "content": "Developed a line of popular plugins for MODO, including plugins for dynamic [radial](#wheely) and [multi-axis symmetry](#flipper), [iterative saving](#snap) and revision management, live-updating [dimensions](#metermade), simplified [matcap shaders](#bling), [image cropping](#cropper), simplified [progressive rendering](#rendermonkey), and completely reworked [User Interface](#zen)."
                 },
                 {
                     "heading": "The Foundry",
@@ -126,7 +126,7 @@
                         "2012",
                         "present"
                     ],
-                    "content": "At SolidSmack we [write](#), [podcast](#), and [produce video content](#) about the design process. We're interested in how real people make real products in real life."
+                    "content": "At SolidSmack we [write](#sswrite), [podcast](#sspodcast), and [produce video content](#ssvideo) about the design process. We're interested in how real people make real products in real life."
                 },
                 {
                     "heading": "Freelance",
@@ -136,13 +136,13 @@
                             "heading": "3DWorld Magazine",
                             "subheading": "Contributor",
                             "year": "2010",
-                            "content": "Six page [cover article](#) and accompanying six hour video [tutorial](#) for MODO."
+                            "content": "Six page [cover article](#3dworld) and accompanying six hour video [tutorial](#3dworldvid) for MODO."
                         },
                         {
                             "heading": "Develop3D Magazine",
                             "subheading": "Contributor",
                             "year": "2013",
-                            "content": "Four page printed [review](#) for MODO 701."
+                            "content": "Four page printed [review](#develop3d) for MODO 701."
                         },
                         {
                             "heading": "Industry Analysis",
@@ -289,7 +289,7 @@
         },
         {
             "heading": "Contact",
-            "content": "**Adam O'Hern**\n\n* LinkedIn: [adamohern](#)  \n* Twitter: [adam_ohern](#)  \n* Hangouts: [adam.ohern@gmail.com](#)  \n* Skype: [adamohern](#)  \n* email: [adam@mechanicalcolor.com](#)  \n* M: (310) 692-4380"
+            "content": "**Adam O'Hern**\n\n* LinkedIn: [adamohern](https://www.linkedin.com/in/adamohern)  \n* Twitter: [adam_ohern](https://twitter.com/adam_ohern)  \n* Hangouts: [adam.ohern@gmail.com](https://plus.google.com/104457182243197908311)  \n* Skype: [adamohern](skype:adamohern?chat)  \n* email: [adam@mechanicalcolor.com](mailto:adam@mechanicalcolor.com)  \n* M: <a href=\"tel:+1-310-692-4380\">(310) 692-4380</a>"
         },
         {
             "content": "{Accessed *(date)}(small)"
