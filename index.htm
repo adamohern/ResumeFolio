@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,6 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 </head>
 
@@ -15,7 +17,8 @@
 
 <foot>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="content/content.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
     <script src="js/showdown.min.js"></script>
     <script src="js/mustache.js"></script>
     <script src="js/shorthand.js"></script>
@@ -23,7 +26,6 @@
         var markdown = new showdown.Converter();
 
         function renderHTML(json, templates, depth) {
-
             var HTML = Mustache.render(templates.content, {
                 h: "h" + depth,
                 heading: shorthand(json.heading),
@@ -49,19 +51,22 @@
 
         var content = $.get("templates/content.html");
         var wrapper = $.get("templates/wrapper.html");
+        var json = $.getJSON("content/content.json");
 
-        $.when(content, wrapper).done(function (content, wrapper) {
+        $.when(content, wrapper, json).done(function (content, wrapper, json) {
             var templates = {
                 content: content[0],
                 wrapper: wrapper[0]
             };
 
-            $("body").html(renderHTML(CONTENT, templates, 1));
+            $("body").html(renderHTML(json[0], templates, 1));
 
             $("a").each(function () {
                 $(this).addClass("color_" + Math.floor(Math.random() * 4));
+                $(this).fancybox();
             });
         });
+            
     </script>
 </foot>
 

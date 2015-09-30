@@ -71,6 +71,11 @@ a {
     border-radius: .3em;
 }
 
+a.fancybox-close,
+a.fancybox-close:hover{
+    background-color:transparent;
+}
+
 a:hover {
     background-color: #c5e9ff;
 }
