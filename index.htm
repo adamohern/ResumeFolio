@@ -49,8 +49,10 @@
         };
 
         function renderImages(json, templates) {
+            HTML = "";
+            
             for (var i in json) {
-                var HTML = Mustache.render(templates.images, {
+                HTML += Mustache.render(templates.images, {
                     anchor: i,
                     image: json[i].image,
                     caption: markdown.makeHtml(shorthand(json[i].caption))
