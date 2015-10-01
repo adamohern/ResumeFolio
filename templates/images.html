@@ -1,4 +1,16 @@
 <div class="imageBlock" id="{{ anchor }}">
     {{ #image }}<img src="{{ image }}" />{{ /image }}
-    {{ #caption }}<div class="caption">{{{ caption }}}</div>{{ /caption }}
+    <div class="contentBlock">
+        {{ #heading }}
+        <div class="heading">
+            <h3>{{ heading }}{{ #year }} <span class="year">{{ year }}</span>{{ /year }}</h3>
+        </div>
+        {{ /heading }} {{ #subheading }}
+        <h4 class="subheading">{{ subheading }} </h4>{{ /subheading }} {{ #content }}
+        <div class="content">
+            {{{ content }}}
+        </div>
+        {{ /content }}
+
+    </div>
 </div>

@@ -156,9 +156,18 @@ a.color_4 {
 .d3 h4,
 .d3 p {
     margin: 0;
-    size: inherit;
     display: inline;
+    size: inherit;
     font-weight: 300;
+}
+
+.summary p:first-child{
+    display:inline;
+}
+
+.summary p{
+    display:block;
+    margin-top:1em;
 }
 
 .d3 h4 {
@@ -183,18 +192,31 @@ a.color_4 {
 }
 
 .imageBlock h3 {
-    margin-bottom:.5em;
+    margin:1em auto;
 }
 
-.imageBlock .caption {
+.imageBlock .subheading {
+    display:inline;
+}
+
+.imageBlock .contentBlock {
     text-align:left;
     max-width:40em;
     margin: 4% auto;
     padding: 0 1em;
 }
 
-.imageBlock .caption p {
-    margin-bottom:.7em;
+.imageBlock .content {
+    display:inline;
+}
+
+.imageBlock .content p:first-child {
+    display:inline;
+}
+
+.imageBlock .content p {
+    display:block;
+    margin-top:1em;
 }
 
 @media print {

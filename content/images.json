@@ -1,142 +1,231 @@
 {
     "indypowertools":{
-        "image":"",
-        "caption":"###Jigsaw\n\nWorked with Black&Decker on a contract basis to design a jigsaw."
+        "image":"img/jigsaw.png",
+        "heading":"Black&Decker",
+        "subheading":"Contract Industrial Design",
+        "year":"2009",
+        "content":"Worked with Black&Decker on a contract basis for two jigsaws (one of which is pictured) and a random orbit sander. Role included 2D sketching and illustration and 3D sketch modeling in CATIA V5."
     },
     "bdkpowertools":{
+        "heading":"",
+        "subheading":"",
+        "year":"",
         "image":"img/powertools.png",
-        "caption":"###Black&Decker - Industrial Designer\n\nWorked closely with marketing and engineering teams to manufacture power tools for mass market.\n\nRole included product ideation, 2D sketching in Photoshop and Illustrator, 3D modeling in CATIA and Rhino, building mockups and quick prototypes, participating in qualitative user research sessions, corresponding daily with engineers both domestically and in China, and working with a dedicated CATIA surfacing team to finalize tooling geometry."
+        "content":"###Black&Decker - Industrial Designer\n\nWorked closely with marketing and engineering teams to manufacture power tools for mass market.\n\nRole included product ideation, 2D sketching in Photoshop and Illustrator, 3D modeling in CATIA and Rhino, building mockups and quick prototypes, participating in qualitative user research sessions, corresponding daily with engineers both domestically and in China, and working with a dedicated CATIA surfacing team to finalize tooling geometry."
     },
     "audiogear":{
         "image":"",
-        "caption":""
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""
     },
     "educationaltoys":{
         "image":"",
-        "caption":""
-    },
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""    },
     "robot":{
         "image":"",
-        "caption":""
-    },
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""    },
     "hibachigrill":{
         "image":"",
-        "caption":""
-    },
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""    },
     "cooler":{
         "image":"",
-        "caption":""
-    },
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""    },
     "headphones":{
         "image":"",
-        "caption":""
-    },
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""    },
     "faucets":{
         "image":"",
-        "caption":""
-    },
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""    },
     "toilets":{
         "image":"",
-        "caption":""
-    },
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""    },
     "flushvalves":{
         "image":"",
-        "caption":""
-    },
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""    },
     "scifi":{
         "image":"",
-        "caption":""
-    },
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""    },
     "coffeemakers":{
         "image":"",
-        "caption":""
-    },
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""    },
     "paninimaker":{
         "image":"",
-        "caption":""
-    },
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""    },
     "xboxone":{
         "image":"",
-        "caption":""
-    },
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""    },
     "drones":{
         "image":"",
-        "caption":""
-    },
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""    },
     "golfclubs":{
         "image":"",
-        "caption":""
-    },
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""    },
     "medical":{
         "image":"",
-        "caption":""
-    },
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""    },
     "scrubber":{
         "image":"",
-        "caption":""
-    },
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""    },
     "vpx":{
+        "heading":"",
+        "subheading":"",
+        "year":"",
         "image":"img/vpx.png",
-        "caption":"Oh yay! More tools."
+        "content":"Oh yay! More tools."
     },
     "thinclient":{
+        "heading":"",
+        "subheading":"",
+        "year":"",
         "image":"img/thinclient.png",
-        "caption":"Oooooh."
+        "content":"Oooooh."
     },
     "wheely":{
         "image":"",
-        "caption":""
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""
     },
     "flipper":{
         "image":"",
-        "caption":""
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""
     },
     "snap":{
         "image":"",
-        "caption":""
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""
     },
     "metermade":{
         "image":"",
-        "caption":""
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""
     },
     "bling":{
         "image":"",
-        "caption":""
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""
     },
     "cropper":{
         "image":"",
-        "caption":""
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""
     },
     "rendermonkey":{
         "image":"",
-        "caption":""
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""
     },
     "zen":{
         "image":"",
-        "caption":""
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""
     },
     "sswrite":{
         "image":"",
-        "caption":""
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""
     },
     "sspodcast":{
         "image":"",
-        "caption":""
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""
     },
     "ssvideo":{
         "image":"",
-        "caption":""
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""
     },
     "3dworld":{
         "image":"",
-        "caption":""
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""
     },
     "3dworldvid":{
         "image":"",
-        "caption":""
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""
     },
     "develop3d":{
         "image":"",
-        "caption":""
+        "heading":"",
+        "subheading":"",
+        "year":"",
+        "content":""
     }
 }

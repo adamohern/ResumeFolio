@@ -54,8 +54,11 @@
             for (var i in json) {
                 HTML += Mustache.render(templates.images, {
                     anchor: i,
+                    heading: json[i].heading,
+                    subheading: json[i].subheading,
+                    year: json[i].year,
                     image: json[i].image ? json[i].image : "/img/comingsoon.png",
-                    caption: markdown.makeHtml(shorthand(json[i].caption))
+                    content: markdown.makeHtml(shorthand(json[i].content))
                 });
             };
 
