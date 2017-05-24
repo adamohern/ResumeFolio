@@ -15,6 +15,30 @@
                     "content": "Design consulting for [power tools](#indypowertools), [audio gear](#audiogear), [educational toys](#educationaltoys), a [robot](#robot), a [hibachi grill](#hibachigrill), a [cooler](#cooler), [headphones](#headphones), [faucets](#faucets), [toilets](#toilets), [flush valves](#flushvalves), a [sci-fi movie vehicle](#scifi), [coffee makers](#coffeemakers), a [panini maker](#paninimaker), and a [lint roller](#lintroller). \n\nCreated marketing product photography for [video game consoles](#xboxone), [drones](#drones), [golf clubs](#golfclubs), [medical devices](#medical), and a [scrubber thingy](#scrubber)."
                 },
                 {
+                    "heading": "Mechanical Color",
+                    "subheading": "MODO Plugin Development",
+                    "year": [
+                        "2014",
+                        "present"
+                    ],
+                    "content": "Developed a line of popular plugins for MODO, including plugins for dynamic [radial](#wheely) and [multi-axis symmetry](#flipper), [iterative saving](#snap) and revision management, live-updating [dimensions](#metermade), simplified [matcap shaders](#bling), [image cropping](#cropper), simplified [progressive rendering](#rendermonkey), and completely reworked [User Interface](#zen)."
+                },
+                {
+                    "heading": "The Foundry",
+                    "subheading": "UX + UI design",
+                    "year": [
+                        "2013",
+                        "present"
+                    ],
+                    "content": "Designed and implemented the MODO 801/901 \"Interactive Showcase\", giving new users clear and concise access to important information, inspirational materials, and tutorials. Worked internally with The Foundry to develop products and plugins for the design market."
+                },
+                {
+                    "heading": "OnShape",
+                    "subheading": "UX + UI design",
+                    "year": "2014",
+                    "content": "Worked with OnShape to streamline and simplify their browser-based user interface."
+                },
+                {
                     "heading": "Bose",
                     "subheading": "Advanced Development Industrial Design",
                     "year": [
@@ -41,7 +65,7 @@
             ]
         },
         {
-            "heading": "I teach {other people }(nowrap){to design things.}(nowrap)",
+            "heading": "I teach {other people }(nowrap){ to design things.}(nowrap)",
             "content": [
                 {
                     "heading": "The Foundry",
@@ -88,36 +112,7 @@
             ]
         },
         {
-            "heading": "I design tools {that help people }(nowrap){design things.}(nowrap)",
-            "content": [
-                {
-                    "heading": "Mechanical Color",
-                    "subheading": "MODO Plugin Development",
-                    "year": [
-                        "2014",
-                        "present"
-                    ],
-                    "content": "Developed a line of popular plugins for MODO, including plugins for dynamic [radial](#wheely) and [multi-axis symmetry](#flipper), [iterative saving](#snap) and revision management, live-updating [dimensions](#metermade), simplified [matcap shaders](#bling), [image cropping](#cropper), simplified [progressive rendering](#rendermonkey), and completely reworked [User Interface](#zen)."
-                },
-                {
-                    "heading": "The Foundry",
-                    "subheading": "UX + UI design",
-                    "year": [
-                        "2013",
-                        "present"
-                    ],
-                    "content": "Designed and implemented the MODO 801/901 \"Interactive Showcase\", giving new users clear and concise access to important information, inspirational materials, and tutorials. Worked internally with The Foundry to develop products and plugins for the design market."
-                },
-                {
-                    "heading": "OnShape",
-                    "subheading": "UX + UI design",
-                    "year": "2014",
-                    "content": "Worked with OnShape to streamline and simplify their browser-based user interface."
-                }
-            ]
-        },
-        {
-            "heading": "I publish about {designing things.}(nowrap)",
+            "heading": "I write and podcast about {designing things.}(nowrap)",
             "content": [
                 {
                     "heading": "SolidSmack",
